@@ -112,9 +112,13 @@ def sanity_check(args: Union[argparse.Namespace, DictConfig]):
     # patch_output_paths
     # preprocess paths
     subs = [args.feature_type]
-    if hasattr(args, 'model_name'):
-        subs.append(args.model_name)
-        # may add `finetuned_on` item
+
+    #####################
+    # UPDATED FOR COLAB #
+    #####################
+    # if hasattr(args, 'model_name'):
+    #     subs.append(args.model_name)
+    #     # may add `finetuned_on` item
     real_output_path = args.output_path
     real_tmp_path = args.tmp_path
     for p in subs:
